@@ -64,11 +64,20 @@ python3 -m unittest tests.test_library_builder
 Each course has:
 
 - `generator/generate.py` or scene modules
+- `generator/ekit.py` shim importing `generators/common`
 - `generated/*.excalidraw`
 
-New generators should import shared helpers from `generators/common` and write to `generated/`.
+Always build scenes with the shared kit:
 
-Prefer slug directory names and relative paths. Do not hardcode absolute paths.
+```python
+from ekit import *
+new()
+title("Course Title", 60, 40)
+box(60, 140, 220, 90, "Concept")
+save("001 Scene Name")
+```
+
+Use `BG`, `INK`, `ACC`, `CON`, `BDR`, and other tokens from `generators/common/tokens.py`. Do not hardcode colors or raw Excalidraw JSON unless necessary.
 
 ## Safety
 
