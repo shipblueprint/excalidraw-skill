@@ -1,0 +1,8 @@
+node_modules/
+__pycache__/
+.codegraph/
+.scratch/
+*.pyc
+tools/renderer/generated/
+generators/*/generated/png/
+generators/*/generated/png-dark/

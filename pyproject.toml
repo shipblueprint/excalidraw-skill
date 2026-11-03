@@ -1,0 +1,8 @@
+[project]
+name = "excalidraw-asset-pipeline"
+version = "0.1.0"
+description = "Generate, render, and organize Excalidraw diagrams and libraries."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
