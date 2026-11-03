@@ -1,22 +1,40 @@
 # Excalidraw Asset Pipeline
 
-## Structure
+OpenCode skill and tooling for branded Excalidraw diagrams: scaffold a course, author scenes with the shared kit, render PNGs, and build libraries.
 
-- `assets/classified/` - topic folders of individual Excalidraw files
-- `assets/libraries/by-topic/` - topic-grouped Excalidraw libraries
-- `assets/` - legacy libs, brand-recolor libs, all-in-one library
-- `docs/` - spec and animation guidelines
-- `generators/` - course and hand-drawn diagram generators
-- `tests/` - tests
-- `tools/brand/` - brand tokens, validation, audit, recolor
-- `tools/library_builder/` - normalizer, classifier, builder
-- `tools/renderer/` - unified light/dark PNG renderer
+![Example render](docs/screenshot.png)
+
+## TL;DR
+
+- Scaffold a course: `python3 tools/new_course.py "Course Name"`
+- Generate scenes: `python3 generators/<slug>/generator/generate.py`
+- Render PNGs: `python3 tools/render_course.py <slug>`
+- Build master library: `python3 tools/library_builder/builder.py`
+- Install skill: `bash tools/install_skill.sh`
+
+## Skill
+
+Skill location: `.opencode/skills/excalidraw-asset-pipeline/SKILL.md`
+
+Use it to scaffold courses, generate branded starter scenes, and render output without hardcoding paths.
 
 ## Commands
 
-- Validate brand tokens: `python3 tools/brand/validate.py`
-- Build master library: `python3 tools/library_builder/builder.py`
-- Render scenes: `cd tools/renderer && node render_all.mjs "../../generators/software-developers-roadmap-to-excellence/generated"`
-- Run tests: `python3 -m unittest tests.test_library_builder`
-- Audit libs: `python3 tools/brand/audit_libs.py`
-- Recolor libs: `python3 tools/brand/recolor_libs.py`
+- `make new NAME="Course Name"`
+- `make render SLUG=course-slug`
+- `make build`
+- `make validate`
+- `make test`
+- `make install-skill`
+
+## Layout
+
+- `generators/<slug>/` - course generators
+- `generators/common/` - shared drawing kit and brand tokens
+- `templates/course/` - scaffold template
+- `tools/` - renderer, library builder, brand tools
+- `assets/` - classified files and libraries
+
+## Generated output
+
+Generated scenes and PNGs are ignored by Git. Regenerate them from the course generators and shared kit.

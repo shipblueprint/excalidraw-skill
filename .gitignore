@@ -6,3 +6,6 @@ __pycache__/
 tools/renderer/generated/
 generators/*/generated/png/
 generators/*/generated/png-dark/
+
+# Generated course output
+generators/*/generated/
