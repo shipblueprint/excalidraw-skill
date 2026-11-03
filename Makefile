@@ -1,19 +1,13 @@
-.PHONY: new render build validate test install-skill
+.PHONY: new render test install-skill
 
 new:
-	python3 tools/new_course.py "$(NAME)"
+	python3 .opencode/skills/excalidraw-asset-pipeline/scripts/new_course.py "$(NAME)"
 
 render:
-	python3 tools/render_course.py "$(SLUG)"
-
-build:
-	python3 tools/library_builder/builder.py
-
-validate:
-	python3 tools/brand/validate.py
+	python3 .opencode/skills/excalidraw-asset-pipeline/scripts/render_course.py "$(SLUG)"
 
 test:
-	python3 -m unittest tests.test_library_builder
+	python3 -m unittest tests.test_scaffold
 
 install-skill:
-	bash tools/install_skill.sh
+	bash .opencode/skills/excalidraw-asset-pipeline/scripts/install_skill.sh

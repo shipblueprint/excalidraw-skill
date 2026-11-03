@@ -7,7 +7,7 @@ import shutil
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.dirname(HERE)
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(HERE))))
 TEMPLATE = os.path.join(ROOT, "templates", "course")
 
 
@@ -42,7 +42,7 @@ def main():
     print(f"Directory: {course_dir}")
     print("Next steps:")
     print(f"  python3 generators/{slug}/generator/generate.py")
-    print(f"  python3 tools/render_course.py {slug}")
+    print(f"  python3 .opencode/skills/excalidraw-asset-pipeline/scripts/render_course.py {slug}")
 
 
 if __name__ == "__main__":

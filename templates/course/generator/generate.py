@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate a starter Excalidraw scene for {{COURSE_NAME}}."""
+"""Generate starter Excalidraw scene for {{COURSE_NAME}}."""
 import os
 import sys
 
@@ -10,9 +10,10 @@ from ekit import *
 
 new()
 title("{{COURSE_NAME}}", 60, 40)
-subtitle("Starter scene generated from the shared brand kit.", 60, 82, width=520)
-box(60, 150, 220, 90, "Concept")
-box(360, 150, 220, 90, "Diagram")
-arrow(280, 195, 360, 195)
+subtitle("Starter scene - replace with your own diagrams.", 60, 80, width=700)
+box(60, 140, 220, 90, "Input")
+box(360, 140, 220, 90, "Process")
+box(660, 140, 220, 90, "Output")
+arrow(280, 185, 360, 185)
+arrow(580, 185, 660, 185)
 save("001 Starter")
-print("Wrote starter scene to generated/001 Starter.excalidraw")

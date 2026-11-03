@@ -19,6 +19,12 @@ description: Generate, render, and organize Excalidraw diagrams and asset librar
 - `tools/renderer/` - light/dark PNG renderer
 - `tools/brand/` - brand validation and audit
 
+## Scripts
+
+- `<skill-base-dir>/scripts/new_course.py "Course Name"`
+- `<skill-base-dir>/scripts/render_course.py <slug>`
+- `<skill-base-dir>/scripts/install_skill.sh`
+
 ## Course slugs
 
 Course directories use URL-safe slugs. Display names stay in file content and metadata.
@@ -35,7 +41,7 @@ Examples:
 Render a course:
 
 ```sh
-cd tools/renderer
+cd <skill-base-dir>/../../tools/renderer  # repo tools/renderer
 node render_all.mjs "../../generators/<slug>/generated"
 ```
 
@@ -43,7 +49,7 @@ node render_all.mjs "../../generators/<slug>/generated"
 Validate brand tokens:
 
 ```sh
-python3 tools/brand/validate.py
+python3 tools/brand/validate.py  # if available
 ```
 
 Run tests:
@@ -56,7 +62,7 @@ python3 -m unittest tests.test_scaffold
 
 When the user provides a course summary or list of prompts:
 
-1. Scaffold the course with `tools/new_course.py`.
+1. Scaffold the course with `<skill-base-dir>/scripts/new_course.py`.
 2. Create one scene module per topic in `generator/`.
 3. Use `from ekit import *` and brand tokens for every element.
 4. Save each scene with a numbered, descriptive filename.

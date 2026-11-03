@@ -16,7 +16,7 @@ class ScaffoldTests(unittest.TestCase):
 
     def test_new_course_creates_expected_files(self):
         subprocess.run(
-            [sys.executable, "tools/new_course.py", "ZZ Scaffold Test Course"],
+            [sys.executable, ".opencode/skills/excalidraw-asset-pipeline/scripts/new_course.py", "ZZ Scaffold Test Course"],
             cwd=ROOT,
             check=True,
         )
