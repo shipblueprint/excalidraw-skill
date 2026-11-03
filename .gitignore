@@ -3,9 +3,10 @@ __pycache__/
 .codegraph/
 .scratch/
 *.pyc
-tools/renderer/generated/
-generators/*/generated/png/
-generators/*/generated/png-dark/
 
 # Generated course output
 generators/*/generated/
+
+# Legacy asset outputs
+assets/
+hand-drawn.zip

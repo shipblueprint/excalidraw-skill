@@ -1,0 +1,11 @@
+{
+  "name": "excalidraw-render",
+  "private": true,
+  "type": "module",
+  "description": "Render all course .excalidraw scenes to PNG locally (no browser) with Excalidraw's own rendering engine.",
+  "dependencies": {
+    "@excalidraw/utils": "^0.1.5",
+    "@resvg/resvg-js": "^2.6.2",
+    "jsdom": "^24.0.0"
+  }
+}

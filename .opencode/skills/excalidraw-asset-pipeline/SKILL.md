@@ -16,9 +16,7 @@ description: Generate, render, and organize Excalidraw diagrams and asset librar
 
 - `generators/<slug>/generated/` - generated `.excalidraw` scenes
 - `generators/common/` - shared drawing kit, tokens, and styles
-- `assets/` - classified files and libraries
 - `tools/renderer/` - light/dark PNG renderer
-- `tools/library_builder/` - normalizer, classifier, builder
 - `tools/brand/` - brand validation and audit
 
 ## Course slugs
@@ -41,11 +39,6 @@ cd tools/renderer
 node render_all.mjs "../../generators/<slug>/generated"
 ```
 
-Build master library:
-
-```sh
-python3 tools/library_builder/builder.py
-```
 
 Validate brand tokens:
 
@@ -56,7 +49,7 @@ python3 tools/brand/validate.py
 Run tests:
 
 ```sh
-python3 -m unittest tests.test_library_builder
+python3 -m unittest tests.test_scaffold
 ```
 
 ## Generating a full course from a summary
@@ -94,5 +87,4 @@ Use `BG`, `INK`, `ACC`, `CON`, `BDR`, and other tokens from `generators/common/t
 ## Safety
 
 - Do not commit generated PNGs unless requested.
-- Do not modify `assets/libraries/master.index.json` by hand; regenerate or script updates.
 - Keep `.codegraph/` untracked.
